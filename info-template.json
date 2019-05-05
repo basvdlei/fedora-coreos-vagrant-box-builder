@@ -1,0 +1,17 @@
+{
+  "name": "fedora-coreos-preview",
+  "description": "Fedora CoreOS Preview 64-bit.",
+  "versions": [
+    {
+      "version": "0",
+      "providers": [
+        {
+          "name": "libvirt",
+          "url": "fedora-coreos.box",
+          "checksum_type": "none",
+          "checksum": "foo"
+        }
+      ]
+    }
+  ]
+}
