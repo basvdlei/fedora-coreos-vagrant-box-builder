@@ -1,4 +1,5 @@
-VERSION := "30.62"
+VERSION := $(shell curl -s "https://ci.centos.org/artifacts/fedora-coreos/prod/builds/builds.json" | jq -r '.builds[0]')
+#VERSION := "30.62"
 URL := "https://ci.centos.org/artifacts/fedora-coreos/prod/builds/$(VERSION)/fedora-coreos-$(VERSION)-qemu.qcow2.gz"
 
 fedora-coreos.json: fedora-coreos.box
@@ -19,4 +20,4 @@ fedora-coreos-qemu.qcow2.gz:
 
 .PHONY: clean
 clean:
-	rm -f fedora-coreos-qemu.img fedora-coreos-qemu.qcow2.gz
+	rm -f box.img fedora-coreos-qemu.img fedora-coreos-qemu.qcow2.gz
