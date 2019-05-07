@@ -10,7 +10,7 @@ fedora-coreos.json: fedora-coreos.box
 		info-template.json > $@)
 
 fedora-coreos.box: box.img metadata.json Vagrantfile
-	tar czvf $@ $?
+	tar czvf $@ $^
 
 box.img: fedora-coreos-qemu.qcow2.gz
 	gunzip -c $< > $@
@@ -20,4 +20,4 @@ fedora-coreos-qemu.qcow2.gz:
 
 .PHONY: clean
 clean:
-	rm -f box.img fedora-coreos-qemu.img fedora-coreos-qemu.qcow2.gz
+	rm -f box.img fedora-coreos.box fedora-coreos.json fedora-coreos-qemu.img fedora-coreos-qemu.qcow2.gz
