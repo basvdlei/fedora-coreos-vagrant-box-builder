@@ -1,5 +1,5 @@
 OUTPUT := ${OUTPUT_DIR}
-VERSION := $(shell curl -s "https://ci.centos.org/artifacts/fedora-coreos/prod/builds/builds.json" | jq -r '.builds[0]')
+VERSION := $(shell curl -s "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/builds.json" | jq -r '.builds[0]')
 URL := "https://ci.centos.org/artifacts/fedora-coreos/prod/builds/$(VERSION)/fedora-coreos-$(VERSION)-qemu.qcow2.gz"
 
 $(OUTPUT)/fedora-coreos.json: $(OUTPUT)/fedora-coreos.box
