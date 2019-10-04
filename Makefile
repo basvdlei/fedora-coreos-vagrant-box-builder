@@ -3,7 +3,7 @@ STREAM := testing
 ARCH := x86_64
 VERSION := $(shell curl -s "https://builds.coreos.fedoraproject.org/prod/streams/$(STREAM)/builds/builds.json" | \
 	jq -r --arg arch "$(ARCH)" 'first(.builds[] | select(.arches[] | contains($$arch))) | .id // empty')
-URL := "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/$(VERSION)/$(ARCH)/fedora-coreos-$(VERSION)-qemu.qcow2.xz"
+URL := "https://builds.coreos.fedoraproject.org/prod/streams/testing/builds/$(VERSION)/$(ARCH)/fedora-coreos-$(VERSION)-qemu.$(ARCH).qcow2.xz"
 
 $(OUTPUT)/fedora-coreos.json: $(OUTPUT)/fedora-coreos.box
 	$(shell jq --arg version $(VERSION) --arg shasum $(shell sha256sum $< | cut -d " " -f 1) \
