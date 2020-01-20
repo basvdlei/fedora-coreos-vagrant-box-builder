@@ -1,7 +1,7 @@
 Fedora CoreOS Vagrant Box Builder
 =================================
 
-Tiny project to convert Fedora CoreOS Preview qcow2 images into libvirt (qemu/kvm) compatible Vagrant boxes.
+Tiny project to convert Fedora CoreOS qcow2 images into libvirt (qemu/kvm) compatible Vagrant boxes.
 
 Building a box
 --------------
@@ -49,7 +49,7 @@ File.open(ignition_file, "w") { |file| file.puts JSON.generate(config)}
 system("chcon system_u:object_r:virt_content_t:s0 #{ignition_file}")
 
 Vagrant.configure("2") do |config|
-  config.vm.box = 'fedora-coreos-preview'
+  config.vm.box = 'fedora-coreos'
   config.vm.provider :libvirt do |lv|
     lv.memory = 1024
     lv.cpus = 1
