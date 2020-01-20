@@ -1,6 +1,6 @@
 {
-  "name": "fedora-coreos-preview",
-  "description": "Fedora CoreOS Preview 64-bit.",
+  "name": "fedora-coreos",
+  "description": "Fedora CoreOS 64-bit.",
   "versions": [
     {
       "version": "0",
