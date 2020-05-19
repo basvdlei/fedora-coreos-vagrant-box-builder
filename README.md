@@ -18,7 +18,8 @@ Importing the box
 -----------------
 
 ```sh
-vagrant box add "$(pwd)/output/fedora-coreos.json"
+cd output
+vagrant box add "$(pwd)/fedora-coreos.json"
 ```
 
 Sample Vagrant project
