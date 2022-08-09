@@ -1,4 +1,4 @@
-FROM registry.fedoraproject.org/fedora:35
+FROM registry.fedoraproject.org/fedora:36
 RUN dnf install -y coreutils curl xz jq make
 COPY info-template.json Makefile metadata.json Vagrantfile /build/
 WORKDIR /build
