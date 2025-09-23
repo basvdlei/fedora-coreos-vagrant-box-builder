@@ -14,6 +14,12 @@ mkdir output
 podman run --rm -v "$(pwd)/output:/output:Z" localhost/box-builder:latest
 ```
 
+Build a specific stream:
+
+```
+podman run --rm -v "$(pwd)/output-next:/output:Z" localhost/box-builder:latest make STREAM=next
+```
+
 Importing the box
 -----------------
 
